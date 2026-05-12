@@ -344,11 +344,21 @@ nav {
 }
 
 .pacotes {
-    background-color: rgb(180, 180, 180);
+    background-color: rgb(180, 180, 180, 0.5);
     width: 50vh;
     height: auto;
     border-radius: 20px;
     padding: 2vh;
+}
+
+.pacotes h1 {
+    margin-top: 1vh;
+    background: linear-gradient(10deg, #ff9900, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
 }
 
 .fourth {
