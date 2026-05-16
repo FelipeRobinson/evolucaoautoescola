@@ -67,7 +67,7 @@
     </section>
     <section class="history">
         <div class="textinho">
-            <h1>QUEM NÓS SOMOS</h1>
+            <h1 class="history-title">QUEM NÓS SOMOS</h1>
             <p>A Autoescola Evolução Campinas nasceu da realização de um sonho.</p>
             <p>Tudo começou com um instrutor apaixonado pelo que faz, que durante muitos anos atuou em outras autoescolas, formando alunos e adquirindo experiência prática no ensino de direção. Com o tempo, surgiu o desejo de ir além: oferecer um atendimento mais humano, próximo e realmente diferenciado.
             Foi então que decidiu sair da CLT e iniciar um novo caminho, trabalhando com aperfeiçoamento de condutores já habilitados. Esse foi o primeiro passo de uma jornada que, com dedicação e esforço, resultou na criação da Auto Escola Evolução.</p>
@@ -116,28 +116,37 @@
             <img src="" alt="">
         </div>
     </section>
-    <section class="sixth">
-        <div class="contatos">
-            <H1>FALE CONOSCO</H1>
-            <div>
-                <p>Para falar conosco você pode entrar em contato via:</p>
+    <section class="sixth" id="contato">
+        <div class="sixth-content">
+            <div class="contatos">
+                <h1>FALE CONOSCO</h1>
                 <div id="contact">
-                    <a href="https://api.whatsapp.com/send?phone=5519992947773&text=Ol%C3%A1,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20adquirir%20a%20minha%20CNH!" id="whatsapp-btn">
+                    <a href="https://api.whatsapp.com/send?phone=5519992947773&text=Ol%C3%A1,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20adquirir%20a%20minha%20CNH!" aria-label="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="https://instagram.com/autoescola.evolucao">
+                    <a href="https://instagram.com/autoescola.evolucao" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@autoescola.evolucao01">
+                    <a href="https://www.tiktok.com/@autoescola.evolucao01" aria-label="TikTok">
                         <i class="fab fa-tiktok"></i>
                     </a>
-                    <a href="https://www.google.com.br/maps/place/Auto+escola+Evolu%C3%A7%C3%A3o/@-22.8842371,-47.0352054,767m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94c8cf10a120af71:0xcc6958116545f336!8m2!3d-22.8842371!4d-47.0326305!16s%2Fg%2F11zhnkxrqr?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D">
+                    <a href="https://www.google.com.br/maps/place/Auto+escola+Evolu%C3%A7%C3%A3o/@-22.8842371,-47.0352054,767m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94c8cf10a120af71:0xcc6958116545f336!8m2!3d-22.8842371!4d-47.0326305!16s%2Fg%2F11zhnkxrqr?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D" aria-label="Localização">
                         <i class="fas fa-location-dot"></i>
                     </a>
                 </div>
-                <h1>Nome</h1>
-                <textarea></textarea>
+                <p>Para você obter mais informações, esteja conectado nas nossas redes sociais ou venha nos visitar.</p>
             </div>
+            <form class="cadastro" action="#">
+                <h1>CADASTRE-SE</h1>
+
+                <label for="cadastro-email">GMAIL</label>
+                <input type="email" id="cadastro-email" name="email" placeholder="autoescola@email.com">
+
+                <label for="cadastro-numero">NÚMERO</label>
+                <input type="tel" id="cadastro-numero" name="numero" placeholder="+55(19)XXXX-XXXX">
+
+                <button class="whatsapp-btn signup-submit" type="button">Cadastrar-se</button>
+            </form>
         </div>
     </section>
     

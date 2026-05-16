@@ -331,6 +331,17 @@ nav {
     padding-bottom: 1vw;
 }
 
+.history-title {
+    opacity: 0;
+    transform: translateY(35px) scale(0.96);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.history-title.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
 .second {
     margin: 2vw 0;
     padding: 0 2vw;
@@ -364,6 +375,175 @@ nav {
 .fourth {
     margin: 5vw;
     z-index: 0;
+}
+
+/* ================= SIXTH / FALE CONOSCO =================
+   Ajustes rápidos desta sessão:
+   --sixth-bg: cor de fundo do bloco inteiro.
+   --sixth-text: cor dos textos e títulos.
+   --sixth-icon-bg: cor do círculo dos ícones.
+   --sixth-icon-color: cor do desenho dos ícones.
+   --sixth-button-bg: cor do botão "Cadastrar-se".
+   --sixth-button-hover: cor do botão ao passar o mouse.
+   Para trocar os ícones, altere as classes Font Awesome no HTML.
+*/
+.sixth {
+    --sixth-bg: #f5ab18;
+    --sixth-text: #000000;
+    --sixth-icon-bg: #000000;
+    --sixth-icon-color: #ffffff;
+    --sixth-input-bg: #ffffff;
+    --sixth-button-bg: #ff681f;
+    --sixth-button-hover: #e95a15;
+    --sixth-gap: 7vw;
+
+    width: 90%;
+    padding: 5vw 3vw;
+    box-sizing: border-box;
+    background-color: var(--sixth-bg);
+    color: var(--sixth-text);
+}
+
+.sixth-content {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--sixth-gap);
+}
+
+.contatos,
+.cadastro {
+    flex: 1;
+}
+
+.contatos h1,
+.cadastro h1 {
+    margin: 0 0 2vw 0;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0;
+}
+
+#contact {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    margin-bottom: 4vw;
+}
+
+#contact a {
+    width: clamp(48px, 5vw, 64px);
+    height: clamp(48px, 5vw, 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--sixth-icon-bg);
+    color: var(--sixth-icon-color);
+    text-decoration: none;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#contact a:hover {
+    transform: translateY(-4px);
+    background-color: var(--sixth-button-bg);
+}
+
+.contatos p {
+    max-width: 520px;
+    margin: 0;
+    font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+    line-height: 1.35;
+    font-weight: 800;
+}
+
+.cadastro {
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastro label {
+    margin-bottom: 0.3rem;
+    font-size: clamp(1rem, 1.7vw, 1.55rem);
+    font-weight: 500;
+}
+
+.cadastro input {
+    width: 100%;
+    height: 42px;
+    margin-bottom: 1.8rem;
+    padding: 0 12px;
+    border: none;
+    background-color: var(--sixth-input-bg);
+    color: var(--sixth-text);
+    font-size: clamp(1rem, 1.7vw, 1.5rem);
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+.cadastro button {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--sixth-button-bg);
+    color: var(--sixth-text);
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cadastro button:hover {
+    background-color: var(--sixth-button-hover);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .sixth {
+        padding: 12vw 6vw;
+    }
+
+    .sixth-content {
+        flex-direction: column;
+        gap: 10vw;
+    }
+
+    .contatos,
+    .cadastro {
+        width: 100%;
+    }
+
+    .contatos h1,
+    .cadastro h1 {
+        margin-bottom: 6vw;
+        font-size: 10vw;
+    }
+
+    #contact {
+        gap: 16px;
+        margin-bottom: 8vw;
+        flex-wrap: wrap;
+    }
+
+    .contatos p {
+        font-size: 6vw;
+    }
+
+    .cadastro label {
+        font-size: 5vw;
+    }
+
+    .cadastro input,
+    .cadastro button {
+        height: 48px;
+        font-size: 4.6vw;
+    }
 }
 
 /* ================= FOOTER ================= */
