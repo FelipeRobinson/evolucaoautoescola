@@ -44,28 +44,47 @@ document.addEventListener("DOMContentLoaded", function () {
         .filter(Boolean);
 
     if (menuSections.length > 0) {
+        let menuScrollFrame = null;
+
+        const updateActiveMenuLink = () => {
+            const nav = document.getElementById("navbar");
+            const activationLine = (nav?.offsetHeight || 0) + window.innerHeight * 0.35;
+            const pageBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+            let activeSection = menuSections[0];
+
+            menuSections.forEach(section => {
+                if (section.getBoundingClientRect().top <= activationLine) {
+                    activeSection = section;
+                }
+            });
+
+            if (pageBottom) {
+                activeSection = menuSections[menuSections.length - 1];
+            }
+
+            setActiveMenuLink(activeSection.id);
+        };
+
+        const scheduleActiveMenuUpdate = () => {
+            if (menuScrollFrame) {
+                return;
+            }
+
+            menuScrollFrame = window.requestAnimationFrame(() => {
+                updateActiveMenuLink();
+                menuScrollFrame = null;
+            });
+        };
+
         const initialSection = location.hash
             ? menuSections.find(section => `#${section.id}` === location.hash)
             : menuSections[0];
 
         setActiveMenuLink((initialSection || menuSections[0]).id);
+        updateActiveMenuLink();
 
-        if ("IntersectionObserver" in window) {
-            const menuObserver = new IntersectionObserver((entries) => {
-                const visibleEntries = entries
-                    .filter(entry => entry.isIntersecting)
-                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-                if (visibleEntries[0]) {
-                    setActiveMenuLink(visibleEntries[0].target.id);
-                }
-            }, {
-                threshold: [0.35, 0.55],
-                rootMargin: "-25% 0px -45% 0px"
-            });
-
-            menuSections.forEach(section => menuObserver.observe(section));
-        }
+        window.addEventListener("scroll", scheduleActiveMenuUpdate, { passive: true });
+        window.addEventListener("resize", scheduleActiveMenuUpdate);
     }
 
     /* FUNÇÃO ANIMAÇÃO QUEM SOMOS */
